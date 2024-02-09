@@ -6,12 +6,11 @@ using namespace std;
 
 class MinStack {
 public:
-    int min, top;
+    int min;
     vector<int> stck;
 
     MinStack() {
         stck.clear();
-        top = 0;
         min = NULL;
     }
     
