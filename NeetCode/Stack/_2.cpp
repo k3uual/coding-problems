@@ -2,6 +2,7 @@
 #include<string.h>
 #include<string>
 #include<vector>
+
 using namespace std;
 
 class MinStack {
@@ -39,8 +40,7 @@ public:
     int getMin() {
         int x = min.size()-1;
         if(x == 0){
-            cout<<"run";
-            return NULL;
+            return 0;
         }
         return min.at(x);
     }
@@ -49,37 +49,27 @@ public:
 int main(){
     MinStack m;
     int choice, val;
-    // printf("Enter choice:\n");
-    // scanf("&%d",choice);
-    // while(choice < 5){
-    //     switch (choice){
-    //         case 1:
-    //             printf("enter data: ");
-    //             scanf("&%d",val);
-    //             m.push(val);
-    //             break;
-    //         case 2:
-    //             m.pop();
-    //             break;
-    //         case 3:
-    //             m.top();
-    //             break;
-    //         case 4:
-    //             m.getMin();
-    //             break;
-    //         default:
-    //             printf("exit");
-    //             break;
-    //     }
-    // }
-    m.push(-2);
-    m.push(0);
-    m.push(-3);
-    cout<<m.getMin();
-    m.pop();
-    cout<<m.top();
-    cout<<m.getMin();
-    m.pop();
-    m.pop();
-    cout<<m.getMin();
+    printf("Enter choice:\n");
+    scanf("%d",&choice);
+    while(choice < 5){
+        switch (choice){
+            case 1:
+                printf("enter data: ");
+                scanf("%d",&val);
+                m.push(val);
+                break;
+            case 2:
+                m.pop();
+                break;
+            case 3:
+                m.top();
+                break;
+            case 4:
+                m.getMin();
+                break;
+            default:
+                printf("exit");
+                break;
+        }
+    }
 }
