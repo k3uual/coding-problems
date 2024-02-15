@@ -11,15 +11,15 @@ public:
         for(int i = 0; i < tokens.size(); i++){
             int count = 0;
             if(tokens[i] == "+") {
-                stck[Top-2] = stck[Top-1] + stck[Top-2];
+                stck[Top-2] = stck[Top-2] + stck[Top-1];
                 Top = Top - 1;
             }
             else if(tokens[i] == "-") {
-                stck[Top-2] = stck[Top-1] - stck[Top-2];
+                stck[Top-2] = stck[Top-2] - stck[Top-1];
                 Top = Top - 1;
             }
             else if(tokens[i] == "*") {
-                stck[Top-2] = stck[Top-1] * stck[Top-2];
+                stck[Top-2] = stck[Top-2] * stck[Top-1];
                 Top = Top - 1;
             }
             else if(tokens[i] == "/") {
@@ -33,7 +33,6 @@ public:
         }
         return stck[0];
     }
-    
 };
 
 int main(){
