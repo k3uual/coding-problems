@@ -5,15 +5,15 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) {
         
-        int sum;
         vector<int> ans;
         int temp = target;
         int limit = 0;
+        unsigned int i;
         
         if(numbers[0] < 0){
             temp = temp - numbers[0];
         }
-        for(int i = 0; i < numbers.size(); i++){
+        for(i = 0; i < numbers.size(); i++){
             
             if(numbers[i] > temp){
                 break;
@@ -27,7 +27,7 @@ public:
             return(ans);
         }
         
-        for(int i = 0; i < numbers.size(); i++){
+        for(i = 0; i < numbers.size(); i++){
             int find = target - numbers[i];
             for(int j = limit; j > i; j--){
                 if(numbers[j] < find)
