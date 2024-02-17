@@ -4,11 +4,8 @@ using namespace std;
 class Solution {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) {
-        
-        int sum;
-        vector<int> ans;
         int temp = target;
-        int limit = 0;
+        int high = 0;
         
         if(numbers[0] < 0){
             temp = temp - numbers[0];
@@ -18,27 +15,27 @@ public:
             if(numbers[i] > temp){
                 break;
             }
-            limit++;
+            high++;
         }
-        limit--;
-        if(limit < 2){
+        high--;
+        if(high < 2){
             ans.push_back(1);
             ans.push_back(2);
             return(ans);
         }
+
+        int low = 0;
         
-        for(int i = 0; i < numbers.size(); i++){
-            int find = target - numbers[i];
-            for(int j = limit; j > i; j--){
-                if(numbers[j] < find)
-                    break;
-                
-                if(numbers[j] == find){
-                    ans.push_back(i+1);
-                    ans.push_back(j+1);
-                    return(ans);
-                }
-            }
+        while(low <= high) {
+            int sum = numbers[low] + numbers[high];
+            if(sum == target)
+                return {low+1, high+1};
+            
+            else if(sum > target)
+                high--;
+            
+            else
+                low++;
         }
         
         return ans;
