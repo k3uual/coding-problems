@@ -8,8 +8,8 @@ public:
         vector<int> ans;
         int temp = target;
         int limit = 0;
-        unsigned int i;
-        
+        unsigned int i, j;
+
         if(numbers[0] < 0){
             temp = temp - numbers[0];
         }
@@ -29,7 +29,7 @@ public:
         
         for(i = 0; i < numbers.size(); i++){
             int find = target - numbers[i];
-            for(int j = limit; j > i; j--){
+            for(j = limit; j > i; j--){
                 if(numbers[j] < find)
                     break;
                 
