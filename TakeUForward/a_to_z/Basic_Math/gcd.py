@@ -6,7 +6,7 @@ def gcd(a, b):
 
 
 if __name__ == "__main__":
-    a = 4
-    b = 8
-    print("The GCD of the two numbers is", gcd(96, 14))
+    a = 96
+    b = 14
+    print("The GCD of the two numbers is", gcd(8, 4))
 
