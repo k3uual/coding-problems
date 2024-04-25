@@ -13,7 +13,7 @@ def l_sub_2p(a, k):
         elif(Sum > k):
             i += 1
         else:
-            j += 1
+            j += 1      
     
     return maxLen
 
