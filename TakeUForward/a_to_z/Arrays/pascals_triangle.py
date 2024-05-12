@@ -6,16 +6,16 @@ def nCr(r, c):
     ans = 1
     for i in range(1, c):
         ans *= (r - i)
-        ans /= i
+        ans //= i
 
-    return int(ans)
+    return ans
 def row(n):
     a = [1]
     ans = 1
     for i in range(1, n):
         ans *= (n - i)
-        ans /= i
-        a.append(int(ans))
+        ans //= i
+        a.append(ans)
     
     return a
     
