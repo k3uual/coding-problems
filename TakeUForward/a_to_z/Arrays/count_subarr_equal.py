@@ -1,31 +1,18 @@
 
 def count_subarr(a, n, k):
-    if(n == 0):
-        return 0
-    if(n == 1):
-        if(a[0] == k):
-            return 1
-        return 0
-    
-    j = 1
-    i = 0
-    sum = a[0] + a[1]
+    d = {}
+    d[0] = 1
+    sum = 0
     count = 0
-    while(j < n and i <= j):
-        if(sum < k):
-            j += 1
-            if(j == n):
-                return count
-            sum += a[j]
-        if(sum > k):
-            sum -= a[i]
-            i += 1
-        print(i, j, sum)
-        if(sum == k):
-            sum -= a[i]
-            i += 1
-            count += 1
+    
+    for i in range(len(a)):
+        sum += a[i]
+        if(d.get(sum-k)):
+            count += d[sum-k]
+        d[sum] = d.get(sum, 0) + 1
+        
     return count
 
-a = [1,1,1]
-print(count_subarr(a, len(a), 2))
+a = [1,2,3,-3,1,1,1,4,2,-3]
+
+print(count_subarr(a, len(a), 3))

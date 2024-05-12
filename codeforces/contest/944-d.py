@@ -6,7 +6,6 @@ def bin_cut(a):
         if(a[i] == 0):
             on_1 = False
             while(j < len(a)):
-                
-            
-        if(a[j] >= temp):
-            
+                pass
+        if(a[j]):
+            pass
