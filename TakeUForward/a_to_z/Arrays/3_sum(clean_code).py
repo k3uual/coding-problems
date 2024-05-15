@@ -33,7 +33,8 @@ def triplet(n, arr):
     return ans
 
 
-arr = [-1, 0, 1, 2, -1, -4]
+# arr = [-1, 0, 1, 2, -1, -4]
+arr = [-2, -2, -2, -1, -1, -1, 0, 0, 0, 2, 2, 2, 2]
 n = len(arr)
 ans = triplet(n, arr)
 for it in ans:
