@@ -1,12 +1,17 @@
+from typing import List
 
-def merge_overlap(a):
-    print(a[2])
-    for i in range(1,len(a),1):
-        print(a[i], i)
-        if(a[i-1][1] >= a[i][0]):
-            a[i-1][1] = a[i][1]
-            del a[i]
+def merge_overlap(a:List[List[int]])-> List[List[int]]:
+    a.sort()
+    ans = []
+    for i in range(len(a)):
+        if not ans or a[i][0] > ans[-1][1]:
+            ans.append(a[i]);
+        else:
+            ans[-1][1] = a[i][1]
     
-    return a
+    return ans
 
-print(merge_overlap([[1,3],[2,6],[8,10],[15,18]]))
+arr = [[1, 3], [8, 10], [2, 6], [15, 18]]
+ans = merge_overlap(arr)
+for i in range(len(ans)):
+    print(f"[{ans[i][0]}, {ans[i][1]}]", end=" ");
