@@ -3,7 +3,6 @@ def insertion(a):
     for i in range(len(a)):
         temp = a[i]
         j = i - 1
-        print(i)
         while(j > 0):
             print(j)
             if(a[j] > temp):
