@@ -1,12 +1,14 @@
 
 def non_repeat(a):
-    high = len(a)-1
-    low = 0
+    high = len(a)-2
+    low = 1
     res = -1
 
-    if high == 0 or a[low] != a[low+1]: return a[0]
+    if high == 0: return a[0]
 
-    if a[high] != a[high-1]: return a[high]
+    if a[low] != a[low-1]: return a[0]
+
+    if a[high] != a[high+1]: return a[high]
 
     while(high >= low):
         mid = (high + low)//2
@@ -23,5 +25,6 @@ def non_repeat(a):
     return -1
 
 a = [1,1,2,2,3,3,4,5,5,6,6]
+a = [1]
 res = non_repeat(a)
 print(a[res], "on index:", res)
