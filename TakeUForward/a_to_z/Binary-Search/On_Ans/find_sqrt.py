@@ -1,6 +1,6 @@
 
 def find_sqrt(n):
-    high = n//2
+    high = n
     low = 1
 
     while(high >= low):
@@ -16,8 +16,8 @@ def find_sqrt(n):
         else:
             high = mid - 1
     
-    return -1
+    return high
 
-n = 69
+n = 2
 res = find_sqrt(n)
 print(res)
