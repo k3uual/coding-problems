@@ -1,4 +1,12 @@
 
+def min_max(a):
+    mn, mx = a[0], a[0]
+    for i in a:
+        mn = min(i, mn)
+        mx = max(i, mx)
+    
+    return (mx, mn)
+
 def bouquets(a, roses, days):
     cnt = 0
     bouquets = 0
@@ -14,8 +22,7 @@ def bouquets(a, roses, days):
     return bouquets
 
 def count_bouquets(a, n, m, k):
-    high = max(a)
-    low = min(a)
+    high, low = min_max(a)
 
     if(len(a) < m*k): return -1
 
