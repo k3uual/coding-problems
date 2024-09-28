@@ -1,0 +1,50 @@
+def fetchData():
+    with open('d:\coding-problems\meta-hacker-cup\walk_the_line_input.txt', 'r') as file:
+        lines = file.readlines()
+
+    testCase = []
+    testCases = [lines[1].strip()]
+    min_val = float("inf")
+    count = 0
+    totalTestCases = lines[0].strip()
+    for i in range(2, len(lines)):
+        if (' ' in lines[i].strip()) == False:
+            ele = int(lines[i].strip())
+            if(min_val > ele):
+                min_val = ele
+        else:
+            testCase.sort()
+            testCases.append(min_val)
+            min_val = float("inf")
+            testCases.append(lines[i].strip())
+            testCase = []
+    testCases.append(min_val)
+    return testCases
+
+def walk_a_line():
+    datas = fetchData()
+    result = []
+    for i in range(0, len(datas), 2):
+        init = datas[i].split()
+        n = int(int(init[0]))
+        k = int(int(init[1]))
+        min_val = datas[i+1]
+        if(n <= 2):
+            if(datas[i+1] <= k):
+                result.append("YES")
+            else:
+                result.append("NO")
+        else:
+            n = n - 2
+            n2 = n + (n + 1)        
+            if(min_val*n2 > k):
+                result.append("NO")
+            else:
+                result.append("YES")
+
+    return result
+
+result = walk_a_line()
+with open("d:\coding-problems\meta-hacker-cup\walk_a_line_out.txt", "w") as f:
+    for i in range(len(result)):
+        f.write("Case #"+str(i+1)+": "+result[i]+"\n")
